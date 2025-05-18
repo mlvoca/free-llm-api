@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free LLM API - mlvoca.com</title>
+    <meta name="description" content="Access a free LLM API for text generation with models like TinyLlama and DeepSeek R1. No API key required, no rate limits!">
+    <meta name="keywords" content="free llm api, text generation API, AI models, TinyLlama, DeepSeek R1, open-source AI">
+    <meta name="author" content="mlvoca.com">
+    <meta name="google-site-verification" content="fdyq3CHPPN3-FQjd51PCUT7FsuE-HMECoHXx_Vs0QBg">
+    <link rel="canonical" href="https://mlvoca.com">
+    <meta property="og:title" content="Free LLM API - mlvoca.com">
+    <meta property="og:description" content="Generate text using free AI models like TinyLlama and DeepSeek R1. No API key required, easy integration.">
+    <meta property="og:image" content="https://github.com/mlvoca/mlvoca.com/blob/main/images/mlvoca_image2.png?raw=true">
+    <meta property="og:url" content="https://mlvoca.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free LLM API - mlvoca.com">
+    <meta name="twitter:description" content="Try the free LLM API for AI-powered text generation with no rate limits.">
+    <meta name="twitter:image" content="https://github.com/mlvoca/mlvoca.com/blob/main/images/mlvoca_image2.png?raw=true">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 70%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        section {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        h2 {
+            color: #007bff;
+        }
+        code {
+            background: #eee;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .code-container {
+            background-color: #282c34;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+            font-family: monospace;
+            text-align: left;
+            display: inline-block;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow: visible;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .copy-btn:hover {
+            background: #0056b3;
+        }
+.copy-message {
+    position: absolute;
+    top: -25px; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .copy-btn {
+        top: -30px; /* Moves the button above the code block */
+        right: 7%; /* Centers the button */
+        transform: translateX(50%); /* Keeps positioning responsive */
+    }
+}
+pre {
+    margin: 0;
+    padding-bottom: 0;
+}
+
+li {
+    margin-bottom: 10px; /* Adds more space between list items */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Free LLM API - mlvoca.com</h1>
+        <p>Unlock AI-powered text generation with no API key required.</p>
+    </header>
+
+    <div class="container">
+        <img src="https://github.com/mlvoca/mlvoca.com/blob/main/images/mlvoca_image2.png?raw=true" alt="mlvoca.com API">
+        
+        <section>
+            <h2>What is mlvoca.com?</h2>
+            <p>mlvoca.com provides a free LLM API. The API provides access to a publicly hosted <code>/api/generate</code> endpoint based on the Ollama API, enabling text generation through various models.</p>
+        </section>
+
+        <section>
+            <h2>Base URL</h2>
+            <code>https://mlvoca.com</code>
+        </section>
+
+        <section>
+            <h2>Endpoint for the free LLM API:</h2>
+            <p><code>POST /api/generate</code></p>
+            <p>Generates a response based on a given prompt using a specified model. It supports both streaming and single-response generation.</p>
+        </section>
+
+        <section>
+            <h2>Available Models:</h2>
+            <ul>
+                <li>TinyLlama</li>
+                <li>DeepSeek R1 (1.5b)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Example Usage</h2>
+            
+            <h3>Streaming Request:</h3>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+<pre>
+curl -X POST https://mlvoca.com/api/generate -d '{
+    "model": "deepseek-r1:1.5b",
+    "prompt": "Why is the sky blue?"
+}'
+</pre>
+            </div>
+            <h3>Streaming Response:</h3>
+            <div class="code-container" style="overflow-x: auto !important;">
+<pre>
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.057589936Z","response":"\u003cthink\u003e","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.105047151Z","response":"\n","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.153911631Z","response":"Okay","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.205618283Z","response":",","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.255770562Z","response":" so","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.30646764Z","response":" I","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.35307409Z","response":" need","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.403763503Z","response":" to","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.455158427Z","response":" explain","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.509438012Z","response":" why","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.562936885Z","response":" the","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.615074831Z","response":" sky","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.669268845Z","response":" looks","done":false}
+{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.723751905Z","response":" blue","done":false}
+...
+</pre>
+            </div>
+
+            <h3>Non-Streaming Request:</h3>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyToClipboard(this); myFunction();">Copy</button>
+<pre>
+curl -X POST https://mlvoca.com/api/generate -d '{
+  "model": "tinyllama",
+  "prompt": "Why is the sky blue?",
+  "stream": false
+}'
+</pre>
+                
+            </div>
+
+                        <h3>Non-Streaming Response:</h3>
+            <div class="code-container" style="overflow-x: auto !important;">
+<pre>
+{
+  "model": "tinyllama",
+  "created_at": "2025-05-09T19:34:00Z",
+  "response": "The sky is blue because of Rayleigh scattering.",
+  "done": true
+  ...
+}
+</pre>
+            </div>
+        </section>
+
+                <section>
+            <h2>Accepts the following parameters:</h2>
+            <ul>
+                <li><code>model</code> <b>(required)</b> - The model name used for generation (can be <code>"tinyllama"</code> or <code>"deepseek-r1:1.5b"</code>).</li>
+                <li><code>prompt</code> <b>(required)</b> - The input prompt for text generation.</li>
+                <li><code>suffix</code> - Text appended after the model response.</li>
+                <li><code>format</code> - Specifies the response format (<code>"json"</code> or a JSON schema).</li>
+                <li><code>options</code> - <a href="https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values" target="_blank">Additional model parameters</a> (e.g., <code>"temperature"</code>).</li>
+                <li><code>system</code> - System message override.</li>
+                <li><code>template</code> - Custom prompt template.</li>
+                <li><code>stream</code> - If <code>false</code>, returns a single response instead of a stream.</li>
+                <li><code>raw</code> - If <code>true</code>, bypasses formatting and applies the full prompt.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Notes on Usage</h2>
+            <ul>
+                <li>The endpoint currently works without any kind of rate limit or API key. Therefore, it can be used for free without token/call limits.</li>
+                <li>The hardware resources are limited. Therefore, responses might be a little slower sometimes, especially during times of high usage.</li>
+                <li>We encourage scientific use of this API. Researchers, educators, and students from universities or educational institutions are encouraged to utilize this resource for scientific purposes. Please reach out to <a href="mailto:mlvoca@protonmail.com">mlvoca@protonmail.com</a> if you are planning to use the API in such a way.</li>
+                <li>Commercial use of this api is not allowed. If you are planning on using this API for your business, please contact <a href="mailto:mlvoca@protonmail.com">mlvoca@protonmail.com</a>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Disclaimer</h2>
+            <p>The API and related services provided herein are made available "as is" and "as available" without any warranties or guarantees, express or implied. The provider of this API (hereinafter referred to as "the Host") does not assume any liability for the accuracy, reliability, completeness, or usefulness of the outputs generated by large language models (LLMs) accessed through this API.</p>
+
+            <p>Users acknowledge and agree that:</p>
+
+            <p>The Host shall not be responsible for any actions, decisions, or consequences arising from the use of this API or any outputs generated by LLMs.</p>
+
+            <p>The Host disclaims any liability for direct, indirect, incidental, consequential, or special damages, including but not limited to loss of data, business disruption, or reputational harm, even if advised of the possibility of such damages.</p>
+
+            <p>Users are solely responsible for evaluating the appropriateness, legality, and applicability of the API’s outputs in their respective contexts.</p>
+
+            <p>The use of this API does not establish any form of client-provider, advisor, or fiduciary relationship.</p>
+
+            <p>By accessing and using this API, users agree to the terms set forth in this disclaimer and waive any claims against the Host related to its usage.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Visit us on <a href="https://github.com/mlvoca/mlvoca.com" target="_blank">GitHub</a> for more details.</p>
+        <p>Contact: <a href="mailto:mlvoca@protonmail.com">mlvoca@protonmail.com</a></p>
+    </footer>
+
+    <script>
+function copyToClipboard(button) {
+    const preElement = button.nextElementSibling; // Selects the adjacent <pre> tag
+    const text = preElement.innerText; // Gets text inside the pre block
+    navigator.clipboard.writeText(text).then(() => {
+        showCopyMessage(button); // Trigger popup message near the button
+    });
+}
+
+function showCopyMessage(button) {
+    let message = document.createElement("span");
+    message.className = "copy-message";
+    message.innerText = "Copied!";
+    
+    button.appendChild(message);
+
+    setTimeout(() => {
+        message.remove(); // Remove message after 2 seconds
+    }, 2000);
+}
+
+
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+
+    </script>
+</body>
+</html>
