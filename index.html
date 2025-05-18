@@ -9,6 +9,7 @@
     <meta name="author" content="mlvoca.com">
     <meta name="google-site-verification" content="fdyq3CHPPN3-FQjd51PCUT7FsuE-HMECoHXx_Vs0QBg">
     <link rel="canonical" href="https://mlvoca.github.io/free-llm-api/">
+    <link rel="icon" type="image/png" href="https://github.com/mlvoca/free-llm-api/blob/main/images/favicon.png?raw=true">
     <meta property="og:title" content="Free LLM API - mlvoca.com">
     <meta property="og:description" content="Generate text using free AI models like TinyLlama and DeepSeek R1. No API key required, easy integration.">
     <meta property="og:image" content="https://github.com/mlvoca/mlvoca.com/blob/main/images/mlvoca_image2.png?raw=true">
@@ -38,9 +39,14 @@
             text-align: center;
         }
         header {
-            background-color: #007bff;
+            background-color: #b91788;
             color: white;
+            border-radius: 10px;
             padding: 20px;
+            margin-bottom: 15px !important;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
         }
         header h1 {
             margin: 0;
@@ -63,7 +69,7 @@
             text-align: left;
         }
         h2 {
-            color: #007bff;
+            color: #b91788;
         }
         code {
             background: #eee;
@@ -83,12 +89,14 @@
             max-width: 100%;
             box-sizing: border-box;
             overflow: visible;
+            border-color: #b91788;
+            border: 2px solid #b91788;
         }
         .copy-btn {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: #007bff;
+            background: #b91788;
             color: #fff;
             border: none;
             padding: 5px 10px;
@@ -97,14 +105,14 @@
             font-size: 14px;
         }
         .copy-btn:hover {
-            background: #0056b3;
+            background: #a6157b;
         }
 .copy-message {
     position: absolute;
-    top: -25px; /* Position above the button */
+    top: -30px; /* Position above the button */
     left: 50%;
     transform: translateX(-50%);
-    background: #28a745;
+    background: #ffb4e8;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -178,7 +186,7 @@ curl -X POST https://mlvoca.com/api/generate -d '{
 </pre>
             </div>
             <h3>Streaming Response:</h3>
-            <div class="code-container" style="overflow-x: auto !important;">
+            <div class="code-container" style="overflow-x: auto !important; border: 0px;">
 <pre>
 {"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.057589936Z","response":"\u003cthink\u003e","done":false}
 {"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.105047151Z","response":"\n","done":false}
@@ -212,7 +220,7 @@ curl -X POST https://mlvoca.com/api/generate -d '{
             </div>
 
                         <h3>Non-Streaming Response of the free llm api:</h3>
-            <div class="code-container" style="overflow-x: auto !important;">
+            <div class="code-container" style="overflow-x: auto !important; border: 0px;">
 <pre>
 {
   "model": "tinyllama",
