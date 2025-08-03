@@ -3,10 +3,10 @@
 <p>We take your privacy seriously. This website uses minimal cookies and does not track users for advertising or profiling purposes.</p>
 
 <h3>Cookies</h3>
-<p>This website may set cookies to store user preferences, such as consent for essential or analytics features. These cookies are:</p>
+<p>This website may set cookies to store user preferences, such as consent for essential or analytics features. These cookies are (except analytics cookies):</p>
 <ul>
   <li><strong>Essential cookies</strong>: Required for basic site functionality. These do not require user consent.</li>
-  <li><strong>Analytics cookies</strong>: Used to understand site usage. These are only set after user consent.</li>
+  <li><strong>Analytics cookies</strong>(Planned - not in use yet): Used to understand site usage. These are only set after user consent.</li>
 </ul>
 <p>Cookies are stored for up to <strong>1 month</strong> and include attributes such as <code>SameSite=Lax</code> and <code>Secure</code> (when applicable) to enhance privacy and security. You can manage or delete cookies through your browser settings.</p>
 
@@ -20,4 +20,4 @@
 <p>This website may contain links to external websites. We are not responsible for the content or privacy practices of these websites.</p>
 
 <h3>Contact</h3>
-<p>If you have any questions about this privacy policy, please contact us at <strong>mlvoca</strong>.</p>
+<p>If you have any questions about this privacy policy, please contact us at <strong>mlvoca@protonmail.com</strong>.</p>
