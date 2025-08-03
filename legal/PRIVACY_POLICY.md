@@ -6,7 +6,7 @@
 <p>This website may set cookies to store user preferences, such as consent for essential or analytics features. These cookies are (except analytics cookies):</p>
 <ul>
   <li><strong>Essential cookies</strong>: Required for basic site functionality. These do not require user consent.</li>
-  <li><strong>Analytics cookies</strong>(Planned - not in use yet): Used to understand site usage. These are only set after user consent.</li>
+  <li><strong>Analytics cookies</strong> (Planned - not in use yet): Used to understand site usage. These are only set after user consent.</li>
 </ul>
 <p>Cookies are stored for up to <strong>1 month</strong> and include attributes such as <code>SameSite=Lax</code> and <code>Secure</code> (when applicable) to enhance privacy and security. You can manage or delete cookies through your browser settings.</p>
 
