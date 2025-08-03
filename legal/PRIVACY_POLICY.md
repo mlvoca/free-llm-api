@@ -3,7 +3,7 @@
 <p>We take your privacy seriously. This website uses minimal cookies and does not track users for advertising or profiling purposes.</p>
 
 <h3>Cookies</h3>
-<p>This website may set cookies to store user preferences, such as consent for essential or analytics features. These cookies are (except analytics cookies):</p>
+<p>This website may set cookies to store user preferences, such as consent for essential or analytics features. These cookies are (except for analytics cookies):</p>
 <ul>
   <li><strong>Essential cookies</strong>: Required for basic site functionality. These do not require user consent.</li>
   <li><strong>Analytics cookies</strong> (Planned - not in use yet): Used to understand site usage. These are only set after user consent.</li>
