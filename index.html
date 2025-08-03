@@ -9,8 +9,9 @@
     <meta name="author" content="mlvoca.com">
     <meta name="google-site-verification" content="fdyq3CHPPN3-FQjd51PCUT7FsuE-HMECoHXx_Vs0QBg">
     <link rel="canonical" href="https://mlvoca.github.io/free-llm-api/">
-    <link rel="icon" type="image/png" href="https://github.com/mlvoca/free-llm-api/blob/main/images/favicon.png?raw=true">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mlvoca/free-llm-api/refs/heads/main/images/favicon.png">
     <meta property="og:title" content="Free LLM API - mlvoca.com">
+    <meta property="og:site_name" content="Free LLM API - mlvoca">
     <meta property="og:description" content="Generate text using free AI models like TinyLlama and DeepSeek R1. No API key required, easy integration.">
     <meta property="og:image" content="https://github.com/mlvoca/mlvoca.com/blob/main/images/mlvoca_image2.png?raw=true">
     <meta property="og:url" content="https://mlvoca.github.io/free-llm-api/">
@@ -23,6 +24,7 @@
     {
     "@context": "https://schema.org",
     "@type": "TechArticle",
+    "name": "Free LLM API - mlvoca",
     "headline": "Free LLM API – Access Powerful, Cost-Free Language Models",
     "description": "Learn about our Free LLM API, which enables developers to integrate advanced language models into their applications at no cost.",
     "url": "https://mlvoca.github.io/free-llm-api/"
@@ -105,6 +107,20 @@
             font-size: 14px;
         }
         .copy-btn:hover {
+            background: #a6157b;
+        }
+        .cookie-btn {
+            top: 10px;
+            right: 10px;
+            background: #b91788;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .cookie-btn:hover {
             background: #a6157b;
         }
 .copy-message {
@@ -274,14 +290,88 @@ curl -X POST https://mlvoca.com/api/generate -d '{
 
             <p>By accessing and using this API, users agree to the terms set forth in this disclaimer and waive any claims against the Host related to its usage.</p>
         </section>
-    </div>
+    
 
+    <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ccc;padding:15px;text-align:center;z-index:9999;">
+    <p style="margin:0;">
+        We use cookies to improve your experience. You can accept all, reject all, or choose which cookies to allow.<br>
+        More information: <a href="https://github.com/mlvoca/free-llm-api/blob/main/legal/PRIVACY_POLICY.md" target="_blank">Privacy Policy</a>
+    </p>
+    <button class="cookie-btn" style="position: relative" onclick="saveConsentAll()" style="margin:10px;">Accept all cookies</button>
+    <button class="cookie-btn" style="position: relative" onclick="saveConsentEssential()" style="margin:10px;">Only essential cookies</button>
+    <br></br>
+    <div style="margin-top:10px;">
+        <label><input type="checkbox" id="essential"> Essential (required)</label>
+        <label><input type="checkbox" id="analytics"> Analytics (currently not used)</label>
+    </div>
+    <button class="cookie-btn" style="position: relative; font-size: 13px" onclick="saveConsent()" style="margin:10px;">Save Preferences</button>
+    </div>
+</div>
     <footer>
         <p>Visit us on <a href="https://github.com/mlvoca/free-llm-api" target="_blank">GitHub</a> for more details.</p>
+        <p><a href="https://github.com/mlvoca/free-llm-api/blob/main/legal/IMPRINT.md" target="_blank">Imprint (Legal Disclosure)</a></p>
+        <p><a href="https://github.com/mlvoca/free-llm-api/blob/main/legal/PRIVACY_POLICY.md" target="_blank">Privacy Policy</a></p>
+        <p><a href="https://github.com/mlvoca/free-llm-api/blob/main/legal/TERMS_OF_USE.md" target="_blank">Terms of use</a></p>
         <p>Contact: <a href="mailto:mlvoca@protonmail.com">mlvoca@protonmail.com</a></p>
     </footer>
 
     <script>
+    if (localStorage.getItem('cookieConsent') !== null) {
+        document.getElementById("cookie-banner").style.setProperty("display", "none", "important");
+    };
+
+    const date = new Date();
+    date.setMonth(date.getMonth() + 1); // 1-month expiry
+
+
+  function saveConsentAll() {
+    const consent = {
+      essential: true,
+      analytics: true//,
+      //marketing: marketing
+      };
+    document.getElementById("cookie-banner").style.display = "none";
+    localStorage.setItem('cookieConsent', consent);
+    document.cookie = "userConsent=all; expires=" + date.toUTCString() + "; path=/; SameSite=Lax";
+    };
+
+  function saveConsentEssential() {
+    const consent = {
+      essential: true,
+      analytics: false//,
+      //marketing: marketing
+      };
+    document.getElementById("cookie-banner").style.display = "none";
+    localStorage.setItem('cookieConsent', consent);
+    document.cookie = "userConsent=essential; expires=" + date.toUTCString() + "; path=/; SameSite=Lax";
+    };
+
+  function saveConsent() {
+    const essential = document.getElementById("essential").checked;
+    const analytics = document.getElementById("analytics").checked;
+    //const marketing = document.getElementById("marketing").checked;
+    const consent = {
+      essential: essential,
+      analytics: analytics//,
+      //marketing: marketing
+    };
+    document.cookie = "cookie_consent=" + JSON.stringify(consent) + "; path=/; max-age=" + 60*60*24*365;
+    if (essential == false) {
+        alert("Essential cookies have to be accepted. If you do not with this, you may leave the site.");
+        }
+    else {
+    document.getElementById("cookie-banner").style.display = "none";
+    document.cookie = "userConsent=custom; expires=" + date.toUTCString() + "; path=/; SameSite=Lax";
+    };
+    localStorage.setItem('cookieConsent', consent);
+  }
+
+/*   window.onload = function() {
+    if (document.cookie.indexOf("essential") === -1) {
+      document.getElementById("cookie-banner").style.display = "block";
+    }
+  }; */
+
 function copyToClipboard(button) {
     const preElement = button.nextElementSibling; // Selects the adjacent <pre> tag
     const text = preElement.innerText; // Gets text inside the pre block
