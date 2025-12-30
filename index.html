@@ -77,6 +77,7 @@
             background: #eee;
             padding: 5px;
             border-radius: 5px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
         }
         .code-container {
             background-color: #282c34;
@@ -84,7 +85,7 @@
             padding: 15px;
             border-radius: 8px;
             position: relative;
-            font-family: monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
             text-align: left;
             display: inline-block;
             width: 100%;
@@ -153,16 +154,23 @@ li {
     margin-bottom: 10px; /* Adds more space between list items */
 }
 
+.responsive-img {
+  width: 40%;
+  height: auto;
+}
+
+
     </style>
 </head>
 <body>
-    <header>
+    <header role="banner">
         <h1>Free LLM API - mlvoca.com</h1>
         <p>Unlock AI-powered text generation with no API key required.</p>
     </header>
 
+    <main role="main">
     <div class="container">
-        <img src="https://github.com/mlvoca/mlvoca.com/blob/main/images/mlvoca_image2.png?raw=true" alt="mlvoca.com API">
+        <img src="https://raw.githubusercontent.com/mlvoca/mlvoca.com/refs/heads/main/images/mlvoca_image3.png" class="responsive-img" fetchpriority="high" width="560" height="373" alt="mlvoca.com API">
         
         <section>
             <h2>What is mlvoca.com?</h2>
@@ -290,6 +298,7 @@ curl -X POST https://mlvoca.com/api/generate -d '{
 
             <p>By accessing and using this API, users agree to the terms set forth in this disclaimer and waive any claims against the Host related to its usage.</p>
         </section>
+    </main>
     
 
     <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ccc;padding:15px;text-align:center;z-index:9999;">
@@ -307,7 +316,7 @@ curl -X POST https://mlvoca.com/api/generate -d '{
     <button class="cookie-btn" style="position: relative; font-size: 13px" onclick="saveConsent()" style="margin:10px;">Save Preferences</button>
     </div>
 </div>
-    <footer>
+    <footer role="contentinfo">
         <p>Visit us on <a href="https://github.com/mlvoca/free-llm-api" target="_blank">GitHub</a> for more details.</p>
         <p><a href="https://github.com/mlvoca/free-llm-api/blob/main/legal/IMPRINT.md" target="_blank">Imprint (Legal Disclosure)</a></p>
         <p><a href="https://github.com/mlvoca/free-llm-api/blob/main/legal/PRIVACY_POLICY.md" target="_blank">Privacy Policy</a></p>
