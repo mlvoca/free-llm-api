@@ -204,7 +204,7 @@ li {
                 <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
 <pre>
 curl -X POST https://mlvoca.com/api/generate -d '{
-    "model": "deepseek-r1:1.5b",
+    "model": "tinyllama",
     "prompt": "Why is the sky blue?"
 }'
 </pre>
@@ -212,20 +212,24 @@ curl -X POST https://mlvoca.com/api/generate -d '{
             <h3>Streaming Response:</h3>
             <div class="code-container" style="overflow-x: auto !important; border: 0px;">
 <pre>
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.057589936Z","response":"\u003cthink\u003e","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.105047151Z","response":"\n","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.153911631Z","response":"Okay","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.205618283Z","response":",","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.255770562Z","response":" so","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.30646764Z","response":" I","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.35307409Z","response":" need","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.403763503Z","response":" to","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.455158427Z","response":" explain","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.509438012Z","response":" why","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.562936885Z","response":" the","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.615074831Z","response":" sky","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.669268845Z","response":" looks","done":false}
-{"model":"deepseek-r1:1.5b","created_at":"2025-05-09T21:27:21.723751905Z","response":" blue","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.531852218Z","response":"The","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.568068974Z","response":" sky","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.605811799Z","response":" blue","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.657004904Z","response":" color","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.694936917Z","response":" is","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.746829635Z","response":" a","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.795048461Z","response":" result","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.846561791Z","response":" of","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.886800731Z","response":" natural","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.937753551Z","response":" light","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:28.977296783Z","response":" absor","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:29.026242174Z","response":"ption","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:29.063471035Z","response":" by","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:29.100445776Z","response":" the","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:29.146222519Z","response":" earth","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:29.183537162Z","response":"'","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:29.229797711Z","response":"s","done":false}
+{"model":"tinyllama","created_at":"2025-12-30T15:32:29.271010173Z","response":" atmosphere","done":false}
 ...
 </pre>
             </div>
