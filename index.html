@@ -220,6 +220,31 @@
                 <section>
                     <h2>Example Usage</h2>
 
+                    <h3>Non-Streaming Request:</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyToClipboard(this); myFunction();">Copy</button>
+                        <pre>
+                            curl -X POST https://mlvoca.com/api/generate -d '{
+                            "model": "tinyllama",
+                            "prompt": "Why is the sky blue?",
+                            "stream": false
+                            }'
+                        </pre>
+                    </div>
+
+                    <h3>Non-Streaming Response of the free llm api:</h3>
+                    <div class="code-container" style="overflow-x: auto !important; border: 0px;">
+                        <pre>
+                            {
+                            "model": "tinyllama",
+                            "created_at": "2025-05-09T19:34:00Z",
+                            "response": "The sky is blue because of Rayleigh scattering.",
+                            "done": true
+                            ...
+                            }
+                        </pre>
+                    </div>
+
                     <h3>Streaming Request:</h3>
                     <div class="code-container">
                         <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -256,30 +281,6 @@
                         </pre>
                     </div>
 
-                    <h3>Non-Streaming Request:</h3>
-                    <div class="code-container">
-                        <button class="copy-btn" onclick="copyToClipboard(this); myFunction();">Copy</button>
-                        <pre>
-                            curl -X POST https://mlvoca.com/api/generate -d '{
-                            "model": "tinyllama",
-                            "prompt": "Why is the sky blue?",
-                            "stream": false
-                            }'
-                        </pre>
-                    </div>
-
-                    <h3>Non-Streaming Response of the free llm api:</h3>
-                    <div class="code-container" style="overflow-x: auto !important; border: 0px;">
-                        <pre>
-                            {
-                            "model": "tinyllama",
-                            "created_at": "2025-05-09T19:34:00Z",
-                            "response": "The sky is blue because of Rayleigh scattering.",
-                            "done": true
-                            ...
-                            }
-                        </pre>
-                    </div>
                 </section>
 
                 <section>
